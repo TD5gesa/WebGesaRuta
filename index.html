@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gesa Ruta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="backdrop-grid"></div>
+    <div class="backdrop-noise"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">G</span>
+        <span class="brand-name">GESATD</span>
+      </div>
+
+      <nav class="nav" aria-label="Navegación principal">
+        <a href="#soluciones">Soluciones</a>
+        <a href="#tacografo">Gesatd Pro</a>
+        <a href="#hardware">Hardware</a>
+        <a href="#contacto">Soporte</a>
+      </nav>
+
+      <div class="top-actions">
+        <a class="link-muted" href="#contacto">Admin login</a>
+        <a class="cta" href="#contacto">Acceso terminal</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section" id="hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Sistemas de precisión cinética</p>
+          <h1>
+            <span class="block">DOMINIO TOTAL</span>
+            <span class="block accent">EN MOVIMIENTO.</span>
+          </h1>
+          <p class="lead">
+            La ingeniería de software más agresiva para transporte. Transformamos la complejidad en un arma estratégica de eficiencia.
+          </p>
+          <div class="hero-actions">
+            <a class="cta hero-cta" href="#soluciones">
+              <span>Explorar GESATD</span>
+              <svg class="cta-icon" aria-hidden="true" viewBox="0 0 24 24" role="img">
+                <path d="M13 2L5 13h5l-1 9 8-11h-5l1-9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" stroke-linecap="round" />
+              </svg>
+            </a>
+            <a class="ghost hero-ghost" href="#contacto">
+              <span>Solicitar demo</span>
+              <svg class="ghost-icon" aria-hidden="true" viewBox="0 0 24 24" role="img">
+                <path d="M3 5.5h18v13H3z" fill="none" stroke="currentColor" stroke-width="1.8" rx="2" ry="2" />
+                <path d="M7 9l3 3-3 3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M12.5 15h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-side reveal">
+          <article class="status-card">
+            <p class="mini-label">Sync status</p>
+            <div class="status-value">99.8%</div>
+            <p class="mini-copy">Integridad de datos</p>
+            <div class="progress-steps">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </article>
+
+          <article class="dashboard-card">
+            <div class="card-head">
+              <div>
+                <p class="mini-label">Monitor de Red Global</p>
+                <h3>Monitor de Red Global</h3>
+              </div>
+              <span class="live">Live</span>
+            </div>
+            <div class="graph-frame">
+              <div class="graph-grid"></div>
+              <svg class="graph-wave" viewBox="0 0 700 220" preserveAspectRatio="none" aria-hidden="true">
+                <path id="graphPath" d="M 70 120 C 125 115, 155 110, 205 124 S 285 151, 340 115 S 420 38, 478 92 S 555 170, 620 70" />
+                <circle class="graph-point" cx="0" cy="0" r="7">
+                  <animateMotion dur="5.5s" repeatCount="indefinite" rotate="auto">
+                    <mpath href="#graphPath" xlink:href="#graphPath"></mpath>
+                  </animateMotion>
+                </circle>
+              </svg>
+              <div class="graph-footer">
+                <span>Latencia: 14ms</span>
+                <span>Optimización activa</span>
+              </div>
+            </div>
+          </article>
+        </aside>
+      </section>
+
+      <section class="section feature-band reveal" id="soluciones">
+        <div class="section-title center">
+          <h2><span>INTELIGENCIA</span> <span class="accent">TACÓGRAFO</span></h2>
+          <p>Control absoluto de tiempos, validación TGD y prevención de sanciones.</p>
+        </div>
+
+        <div class="split-layout" id="tacografo">
+          <article class="wide-panel">
+            <div class="panel-copy">
+              <h3>Panel de Validación TGD</h3>
+              <p>Análisis heurístico de archivos de tacógrafo en tiempo real.</p>
+            </div>
+            <div class="metrics-row">
+              <div class="metric">
+                <span>Validación TGD</span>
+                <strong class="ok">Exitosa</strong>
+                <p>Firma digital verificada. Formato conforme a la normativa vigente.</p>
+              </div>
+              <div class="metric">
+                <span>Infracciones</span>
+                <strong class="bad">0 detectadas</strong>
+                <p>Sin excesos de conducción ni faltas de descanso registradas.</p>
+              </div>
+              <div class="metric">
+                <span>Próxima descarga</span>
+                <strong class="warn">En 4 días</strong>
+                <p>Recordatorio automático activo para cumplimiento legal.</p>
+              </div>
+            </div>
+            <div class="bar-chart">
+              <span></span><span></span><span></span><span></span><span class="peak"></span><span></span><span></span>
+            </div>
+          </article>
+
+          <article class="side-panel">
+            <div class="side-icon">✓</div>
+            <h3>Escudo legal activo</h3>
+            <p>Nuestro motor de IA audita cada segundo de actividad para blindar su flota ante posibles sanciones de transporte.</p>
+            <ul>
+              <li>Auditoría 24/7</li>
+              <li>Alertas preventivas</li>
+              <li>Reportes sancionadores</li>
+            </ul>
+            <a class="ghost block-button" href="#contacto">Ver informe compliance</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compliance reveal">
+        <div class="two-col">
+          <div class="left-stack">
+            <h2>GESTIÓN LABORAL <span class="accent">& COMPLIANCE.</span></h2>
+            <article class="alert-card red">
+              <svg class="alert-ico" aria-hidden="true" viewBox="0 0 24 24" role="img">
+                <path d="M12 3 2.8 19.5h18.4L12 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M12 9v4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+                <circle cx="12" cy="16.5" r="1" fill="currentColor"/>
+              </svg>
+              <div>
+                <h3>Exceso de Jornadas</h3>
+                <p>Detección inmediata de incumplimientos del Convenio Provincial. Evite reclamaciones laborales con datos inalterables.</p>
+              </div>
+            </article>
+            <article class="alert-card amber">
+              <svg class="alert-ico" aria-hidden="true" viewBox="0 0 24 24" role="img">
+                <rect x="4.5" y="6.3" width="15" height="11.4" rx="1.1" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <rect x="7.1" y="9.1" width="7.2" height="5.6" rx="0.9" fill="none" stroke="currentColor" stroke-width="1.8"/>
+                <circle cx="13.7" cy="11.9" r="1.2" fill="currentColor"/>
+              </svg>
+              <div>
+                <h3>Cálculo de Dietas Automático</h3>
+                <p>Control preciso basado en localización real. Adiós a las discrepancias en nóminas y liquidaciones.</p>
+              </div>
+            </article>
+            <article class="alert-card gray">
+              <svg class="alert-ico" aria-hidden="true" viewBox="0 0 24 24" role="img">
+                <path d="M6 15.8 12.1 9.7l2.2 2.2-6.1 6.1H6v-2.2z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M12.7 9 15 6.7l2.3 2.3-2.3 2.3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M14.9 6.8 17.2 4.5l2.3 2.3-2.3 2.3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                <path d="M7 16.7h2.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+              </svg>
+              <div>
+                <h3>Convenio Provincial</h3>
+                <p>Configuración dinámica por zona. El sistema se adapta a la legalidad vigente de cada territorio automáticamente.</p>
+              </div>
+            </article>
+          </div>
+
+          <article class="report-card">
+            <div class="report-head">
+              <span>Compliance report ID-921</span>
+              <span class="dots">● ●</span>
+            </div>
+            <div class="report-body">
+              <p>Conductor: J. García</p>
+              <span class="tag">Alerta</span>
+              <h3>Exceso: 45 min</h3>
+              <div class="issue-box">
+                <strong>Infracción detectada</strong>
+                <p>Sobrepasado tiempo de conducción ininterrumpida según Reglamento (CE) 561/2006.</p>
+              </div>
+            </div>
+            <div class="risk">
+              <div class="risk-head"><span>Riesgo sanción</span><strong>Muy alto</strong></div>
+              <div class="risk-bar"><span></span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section geo-split reveal">
+        <article class="geo-card">
+          <div class="geo-map"></div>
+          <div class="geo-copy">
+            <h2>GEOLOCALIZACIÓN MILIMÉTRICA</h2>
+            <p>Precisión de grado militar. Siga cada activo en tiempo real con integración de tráfico, clima y telemetría de motor.</p>
+          </div>
+        </article>
+
+        <article class="download-card">
+          <div class="download-icon">⬇</div>
+          <h2>DESCARGA REMOTA 2.0</h2>
+          <p>Olvide las molestias de desplazarse al vehículo. Descargue archivos de tacógrafo y tarjeta de conductor a distancia, esté donde esté el camión.</p>
+          <div class="download-progress">
+            <div class="download-head">
+              <span>Progreso de descarga</span>
+              <strong>68%</strong>
+            </div>
+            <div class="download-bar"><span></span></div>
+            <p class="download-state">Estado: transfiriendo data_v4.tgd ...</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="section hardware reveal" id="hardware">
+        <div class="section-title">
+          <h2><span>TACTICAL</span> <span class="accent">GEAR</span></h2>
+          <p>Hardware de alto rendimiento para entornos extremos.</p>
+        </div>
+        <div class="hardware-grid">
+          <article class="hardware-card">
+            <span class="chip">GPS-PRO MK4</span>
+            <div class="hw-icon">◧</div>
+            <h3>Terminal Telemática Pro</h3>
+            <p>Conectividad 5G, redundancia satelital y lectura de bus CAN directo.</p>
+          </article>
+          <article class="hardware-card">
+            <span class="chip">K-READ ELITE</span>
+            <div class="hw-icon">◉</div>
+            <h3>Lector de Tarjetas USB-C</h3>
+            <p>Velocidad de transferencia industrial para descarga manual ultrarrápida.</p>
+          </article>
+          <article class="hardware-card">
+            <span class="chip">SENSE-FLOW</span>
+            <div class="hw-icon">◌</div>
+            <h3>Sensor de Combustible</h3>
+            <p>Precisión del 99.9% en detección de consumos y robos accidentales.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section compat reveal">
+        <p class="eyebrow center">Compatibilidad universal & seguridad bancaria</p>
+        <div class="compat-strip">
+          <span>Scania</span><span>Volvo Trucks</span><span>Daf</span><span>Iveco</span><span>Man</span><span>Renault</span><span>Mercedes-Benz</span><span>Scania</span><span>Volvo Trucks</span><span>Daf</span>
+        </div>
+        <div class="security-row">
+          <span>AES-256 encrypted</span>
+          <span>GDPR compliant</span>
+          <span>100% cloud security</span>
+        </div>
+      </section>
+
+      <section class="section final-cta reveal">
+        <h2>DOMINA TU <span class="accent">FLOTA.</span></h2>
+        <p>No deje el futuro de su empresa al azar. Tome el mando con la tecnología logística más avanzada del mercado.</p>
+        <div class="hero-actions center">
+          <a class="cta" href="#contacto">Empezar ahora</a>
+          <a class="ghost" href="#contacto">Agendar consulta</a>
+        </div>
+      </section>
+
+      <section class="section contact reveal" id="contacto">
+        <div class="contact-brand">
+          <div class="brand">
+            <span class="brand-mark">G</span>
+            <span class="brand-name">GESATD</span>
+          </div>
+          <p>Liderando la vanguardia tecnológica en logística y transporte. Ingeniería de precisión para un mundo que nunca se detiene.</p>
+        </div>
+        <div class="contact-cols">
+          <div>
+            <h3>Ecosistema</h3>
+            <a href="#soluciones">Gesatd Pro</a>
+            <a href="#hardware">Telemetría CAN</a>
+            <a href="#contacto">Gestión laboral</a>
+            <a href="#contacto">API developers</a>
+          </div>
+          <div>
+            <h3>Legal & compliance</h3>
+            <a href="#contacto">Aviso legal</a>
+            <a href="#contacto">Privacidad</a>
+            <a href="#contacto">Política cookies</a>
+            <a href="#contacto">ISO 27001</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 GESATD - Kinetic precision logistics</span>
+      <span class="status-dot"><i></i> Sistemas operativos - v4.8.2</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
