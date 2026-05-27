@@ -208,12 +208,44 @@
         </div>
       </section>
 
-      <section class="section geo-split reveal">
+      <section class="section geo-split reveal" id="geolocalizacion">
         <article class="geo-card">
-          <div class="geo-map"></div>
+          <div class="geo-map" aria-label="Seguimiento en tiempo real de la unidad TRK-042">
+            <div class="geo-map-head">
+              <span class="geo-live"><i></i> GPS LIVE</span>
+              <strong id="geo-zone">A-7 / Valencia</strong>
+            </div>
+            <svg class="geo-route" viewBox="0 0 680 320" role="img" aria-label="Ruta activa del vehículo">
+              <path class="geo-road" d="M 24 244 C 102 220, 106 104, 191 111 S 278 255, 361 231 S 413 82, 505 98 S 575 187, 656 135" />
+              <path class="geo-path" id="geo-path" d="M 24 244 C 102 220, 106 104, 191 111 S 278 255, 361 231 S 413 82, 505 98 S 575 187, 656 135" />
+              <path class="geo-travelled" id="geo-travelled" d="M 24 244 C 102 220, 106 104, 191 111 S 278 255, 361 231 S 413 82, 505 98 S 575 187, 656 135" />
+              <g class="geo-vehicle" id="geo-vehicle">
+                <circle class="geo-pulse" r="18"></circle>
+                <circle class="geo-dot" r="7"></circle>
+              </g>
+            </svg>
+            <div class="geo-hud">
+              <div>
+                <span>Unidad</span>
+                <strong>TRK-042</strong>
+              </div>
+              <div>
+                <span>Velocidad</span>
+                <strong id="geo-speed">82 km/h</strong>
+              </div>
+              <div>
+                <span>Coordenadas</span>
+                <strong id="geo-coordinates">39.4702, -0.3768</strong>
+              </div>
+            </div>
+          </div>
           <div class="geo-copy">
             <h2>GEOLOCALIZACIÓN MILIMÉTRICA</h2>
             <p>Precisión de grado militar. Siga cada activo en tiempo real con integración de tráfico, clima y telemetría de motor.</p>
+            <div class="geo-actions">
+              <button class="ghost geo-button" id="geo-toggle" type="button">Pausar seguimiento</button>
+              <button class="ghost geo-button" id="geo-center" type="button">Centrar unidad</button>
+            </div>
           </div>
         </article>
 
@@ -224,10 +256,12 @@
           <div class="download-progress">
             <div class="download-head">
               <span>Progreso de descarga</span>
-              <strong>68%</strong>
+              <strong id="download-percent">0%</strong>
             </div>
-            <div class="download-bar"><span></span></div>
-            <p class="download-state">Estado: transfiriendo data_v4.tgd ...</p>
+            <div class="download-bar" role="progressbar" aria-label="Progreso de descarga remota" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <span id="download-fill"></span>
+            </div>
+            <p class="download-state" id="download-state">Estado: conectando con data_v4.tgd ...</p>
           </div>
         </article>
       </section>
