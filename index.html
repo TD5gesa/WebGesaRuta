@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=valladolid-vitoria-road-1" />
   </head>
   <body>
     <div class="backdrop-grid"></div>
@@ -210,18 +210,134 @@
 
       <section class="section geo-split reveal" id="geolocalizacion">
         <article class="geo-card">
-          <div class="geo-map" aria-label="Seguimiento en tiempo real de la unidad TRK-042">
+          <div class="geo-map" aria-label="Mapa de ruta Santander Madrid con seguimiento en tiempo real">
             <div class="geo-map-head">
               <span class="geo-live"><i></i> GPS LIVE</span>
-              <strong id="geo-zone">A-7 / Valencia</strong>
+              <strong id="geo-zone">S-10 / Santander</strong>
             </div>
-            <svg class="geo-route" viewBox="0 0 680 320" role="img" aria-label="Ruta activa del vehículo">
-              <path class="geo-road" d="M 24 244 C 102 220, 106 104, 191 111 S 278 255, 361 231 S 413 82, 505 98 S 575 187, 656 135" />
-              <path class="geo-path" id="geo-path" d="M 24 244 C 102 220, 106 104, 191 111 S 278 255, 361 231 S 413 82, 505 98 S 575 187, 656 135" />
-              <path class="geo-travelled" id="geo-travelled" d="M 24 244 C 102 220, 106 104, 191 111 S 278 255, 361 231 S 413 82, 505 98 S 575 187, 656 135" />
+            <div class="real-map-tiles" aria-hidden="true">
+              <div class="real-map-grid">
+                <img src="https://tile.openstreetmap.org/8/123/93.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/124/93.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/125/93.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/126/93.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/123/94.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/124/94.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/125/94.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/126/94.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/123/95.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/124/95.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/125/95.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/126/95.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/123/96.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/124/96.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/125/96.png" alt="" />
+                <img src="https://tile.openstreetmap.org/8/126/96.png" alt="" />
+              </div>
+            </div>
+            <svg class="geo-route" viewBox="0 0 820 720" preserveAspectRatio="none" role="img" aria-label="Ruta activa Santander Madrid">
+              <defs>
+                <pattern id="map-grid" width="52" height="52" patternUnits="userSpaceOnUse">
+                  <path d="M 52 0 H 0 V 52" fill="none" stroke="#cad8c7" stroke-width="1" opacity=".55" />
+                </pattern>
+              </defs>
+              <rect class="map-base" width="820" height="720" />
+              <path class="map-water" d="M 0 0 H 820 V 56 C 738 66 682 50 602 58 C 527 66 470 62 394 72 C 320 82 247 63 168 73 C 89 84 43 86 0 72 Z" />
+              <path class="map-coast" d="M 0 72 C 43 86 89 84 168 73 C 247 63 320 82 394 72 C 470 62 527 66 602 58 C 682 50 738 66 820 56" />
+              <g class="map-terrain">
+                <path d="M 30 96 L 88 72 L 151 83 L 205 116 L 181 154 L 111 151 L 57 132 Z" />
+                <path d="M 172 91 L 246 78 L 312 98 L 294 151 L 226 167 L 169 135 Z" />
+                <path d="M 446 90 L 512 72 L 585 86 L 638 126 L 606 165 L 519 151 L 459 132 Z" />
+                <path d="M 620 93 L 724 88 L 802 126 L 778 183 L 689 174 L 629 139 Z" />
+                <path d="M 68 185 L 139 171 L 206 197 L 188 252 L 112 265 L 54 226 Z" />
+                <path d="M 292 183 L 369 164 L 442 190 L 426 242 L 340 255 L 279 225 Z" />
+                <path d="M 501 203 L 574 184 L 647 215 L 625 270 L 543 279 L 487 245 Z" />
+                <path d="M 682 228 L 772 215 L 836 256 L 803 314 L 722 302 L 674 269 Z" />
+                <path d="M 27 310 L 104 291 L 171 322 L 145 379 L 61 371 L 10 342 Z" />
+                <path d="M 209 304 L 287 285 L 360 321 L 336 380 L 252 372 L 194 338 Z" />
+                <path d="M 405 315 L 487 292 L 571 329 L 543 392 L 456 385 L 392 350 Z" />
+                <path d="M 612 350 L 700 329 L 787 366 L 760 431 L 668 425 L 600 387 Z" />
+                <path d="M 93 432 L 171 412 L 250 443 L 224 502 L 139 505 L 77 466 Z" />
+                <path d="M 302 441 L 386 419 L 460 452 L 437 514 L 348 519 L 289 478 Z" />
+                <path d="M 514 448 L 602 426 L 683 462 L 659 523 L 564 527 L 501 487 Z" />
+                <path d="M 6 565 L 80 543 L 154 579 L 128 638 L 44 633 L -12 600 Z" />
+                <path d="M 193 557 L 273 535 L 349 570 L 326 632 L 234 635 L 180 593 Z" />
+                <path d="M 407 560 L 495 535 L 573 575 L 544 637 L 454 636 L 394 599 Z" />
+                <path d="M 621 563 L 713 541 L 805 583 L 779 647 L 683 646 L 609 605 Z" />
+                <path d="M 115 665 L 205 646 L 284 686 L 254 737 L 152 731 L 93 697 Z" />
+                <path d="M 508 664 L 604 643 L 693 686 L 666 737 L 558 735 L 489 700 Z" />
+              </g>
+              <rect class="map-grid-fill" width="820" height="720" fill="url(#map-grid)" />
+              <g class="map-roads">
+                <path class="road-main" d="M 392 101 C 350 116 307 135 284 161 C 268 181 270 198 276 207 C 284 230 300 254 322 287 C 281 312 240 337 205 363" />
+                <path class="road-main" d="M 166 439 C 181 412 194 386 205 363 C 244 341 286 315 322 287 C 372 266 438 247 500 250 C 536 251 566 252 590 252" />
+                <path class="road-main" d="M 379 592 C 346 575 319 571 296 572 C 314 506 324 433 322 360 C 321 331 320 306 322 287 C 410 244 523 202 642 174" />
+                <path class="road-main" d="M 166 439 C 219 476 285 519 379 592" />
+                <path class="road-main" d="M 118 224 C 126 274 159 324 205 363 C 198 393 185 419 166 439" />
+                <path class="road-main" d="M 468 128 C 520 149 583 166 642 174 C 630 202 610 228 590 252" />
+                <path class="road-main" d="M 468 128 C 516 154 554 195 590 252 C 640 245 698 233 760 218" />
+                <path class="road-main" d="M 58 564 C 92 526 128 485 166 439" />
+                <path class="road-minor" d="M 118 224 C 166 220 222 213 276 207" />
+                <path class="road-minor" d="M 205 363 C 285 359 370 344 456 320 C 503 307 548 284 590 252" />
+                <path class="road-minor" d="M 166 439 C 246 423 326 408 407 389 C 494 369 586 341 680 306" />
+                <path class="road-minor" d="M 58 564 C 128 541 207 547 296 572" />
+                <path class="road-minor" d="M 642 174 C 704 160 760 150 820 142" />
+              </g>
+              <g class="map-shields">
+                <g transform="translate(302 220)"><rect width="34" height="18" rx="3"></rect><text x="17" y="12">A-67</text></g>
+                <g transform="translate(214 400)"><rect width="32" height="18" rx="3"></rect><text x="16" y="12">A-62</text></g>
+                <g transform="translate(335 284)"><rect width="35" height="19" rx="3"></rect><text x="17.5" y="13">AP-1</text></g>
+                <g transform="translate(377 560)"><rect width="34" height="18" rx="3"></rect><text x="17" y="12">AP-6</text></g>
+                <g transform="translate(635 154)"><rect width="34" height="18" rx="3"></rect><text x="17" y="12">AP-68</text></g>
+                <g transform="translate(130 254)"><rect width="34" height="18" rx="3"></rect><text x="17" y="12">A-66</text></g>
+              </g>
+              <g class="map-cities">
+                <text x="366" y="101">Santander</text>
+                <text x="468" y="128">Bilbao</text>
+                <text x="284" y="161">Reinosa</text>
+                <text x="276" y="207">Aguilar de Campoo</text>
+                <text x="322" y="287">Burgos</text>
+                <text x="205" y="363">Palencia</text>
+                <text x="166" y="439">Valladolid</text>
+                <text x="296" y="572">Segovia</text>
+                <text x="379" y="592">Madrid</text>
+                <text x="88" y="224">Leon</text>
+                <text x="58" y="564">Salamanca</text>
+                <text x="590" y="252">Logrono</text>
+                <text x="642" y="174">Vitoria-Gasteiz</text>
+              </g>
+              <g class="real-map-labels" aria-hidden="true">
+                <text x="477" y="42">Santander</text>
+              </g>
+              <path class="geo-road" id="geo-road" d="M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296" />
+              <path class="geo-path" id="geo-path" d="M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296" />
+              <path class="geo-travelled" id="geo-travelled" d="M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296" />
+              <g class="map-warnings">
+                <g transform="translate(276 262)"><circle r="10" /><text y="4">!</text></g>
+                <g transform="translate(218 458)"><circle r="10" /><text y="4">!</text></g>
+                <g transform="translate(304 596)"><circle r="10" /><text y="4">!</text></g>
+                <g class="blocked" transform="translate(250 372)"><circle r="11" /><rect x="-7" y="-2" width="14" height="4" rx="1" /></g>
+              </g>
+              <g class="route-pins">
+                <circle class="pin-start" id="pin-start" cx="477" cy="52" r="8" />
+                <path class="pin-end" id="pin-end" d="M190 286c-6 0-10 4-10 10 0 8 10 19 10 19s10-11 10-19c0-6-4-10-10-10z" />
+                <circle class="pin-end-dot" id="pin-end-dot" cx="190" cy="296" r="3.5" />
+              </g>
               <g class="geo-vehicle" id="geo-vehicle">
                 <circle class="geo-pulse" r="18"></circle>
-                <circle class="geo-dot" r="7"></circle>
+                <g class="geo-truck" aria-hidden="true" transform="scale(.72)">
+                  <ellipse class="truck-shadow" cx="0" cy="14" rx="18" ry="7"></ellipse>
+                  <rect class="truck-cargo" x="-15" y="-42" width="30" height="27" rx="3"></rect>
+                  <path class="truck-cargo-lines" d="M-9 -37v17M0 -39v19M9 -37v17M-11 -29h22"></path>
+                  <path class="truck-cab-face" d="M-17 -13h34l4 13v20h-42V0z"></path>
+                  <path class="truck-roof" d="M-12 -20h24l5 7h-34z"></path>
+                  <path class="truck-window" d="M-11 -10h22l3 10h-28z"></path>
+                  <path class="truck-grille" d="M-10 5h20v10h-20z"></path>
+                  <path class="truck-grille-line" d="M-7 8h14M-7 12h14"></path>
+                  <circle class="truck-light left" cx="-14" cy="8" r="3"></circle>
+                  <circle class="truck-light right" cx="14" cy="8" r="3"></circle>
+                  <rect class="truck-bumper" x="-18" y="17" width="36" height="5" rx="2"></rect>
+                </g>
               </g>
             </svg>
             <div class="geo-hud">
@@ -235,7 +351,7 @@
               </div>
               <div>
                 <span>Coordenadas</span>
-                <strong id="geo-coordinates">39.4702, -0.3768</strong>
+                <strong id="geo-coordinates">43.4627, -3.8093</strong>
               </div>
             </div>
           </div>
@@ -346,6 +462,6 @@
       <span class="status-dot"><i></i> Sistemas operativos - v4.8.2</span>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=valladolid-vitoria-road-1"></script>
   </body>
 </html>
