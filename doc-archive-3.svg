@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" fill="none" role="img" aria-label="Firma digital">
+  <defs>
+    <linearGradient id="bg3" x1="87" y1="62" x2="709" y2="570" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#101010"/>
+      <stop offset="0.5" stop-color="#111827"/>
+      <stop offset="1" stop-color="#091224"/>
+    </linearGradient>
+    <linearGradient id="sheet3" x1="232" y1="122" x2="562" y2="514" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#dce4f3"/>
+    </linearGradient>
+    <linearGradient id="signature3" x1="260" y1="408" x2="522" y2="408" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff9800"/>
+      <stop offset="1" stop-color="#2952f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="640" rx="36" fill="url(#bg3)"/>
+  <circle cx="626" cy="126" r="98" fill="#2952f0" fill-opacity=".12"/>
+  <circle cx="182" cy="526" r="116" fill="#ff9800" fill-opacity=".08"/>
+
+  <g transform="translate(246 108)">
+    <rect x="0" y="0" width="308" height="420" rx="26" fill="url(#sheet3)" stroke="#d2d8e6" stroke-width="2"/>
+    <rect x="24" y="22" width="260" height="50" rx="16" fill="#0f172a"/>
+    <text x="154" y="53" text-anchor="middle" font-size="21" font-weight="900" font-family="Inter, Arial, sans-serif" fill="#ffffff" letter-spacing="2">FIRMA DIGITAL</text>
+    <rect x="24" y="100" width="118" height="16" rx="8" fill="#cbd5e1"/>
+    <rect x="24" y="132" width="190" height="16" rx="8" fill="#cbd5e1"/>
+    <rect x="24" y="164" width="150" height="16" rx="8" fill="#cbd5e1"/>
+
+    <g transform="translate(28 214)">
+      <rect x="0" y="0" width="252" height="120" rx="18" fill="#ffffff"/>
+      <path d="M24 40h204" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 66h156" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+      <path d="M24 92h178" stroke="#e2e8f0" stroke-width="10" stroke-linecap="round"/>
+      <path d="M170 52c20-12 36-14 50-6 10 6 14 14 14 24 0 15-12 27-28 27-12 0-23-5-34-15" stroke="url(#signature3)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <g transform="translate(178 332)">
+      <rect x="0" y="0" width="90" height="48" rx="16" fill="#31d26b"/>
+      <path d="M24 24l10 10 22-24" stroke="#fff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+  </g>
+
+  <g transform="translate(520 170)">
+    <circle cx="0" cy="0" r="52" fill="#ff9800" fill-opacity=".14"/>
+    <rect x="-16" y="-28" width="32" height="46" rx="8" fill="#fff" fill-opacity=".92"/>
+    <rect x="-26" y="-10" width="52" height="42" rx="14" fill="#0f172a"/>
+    <circle cx="0" cy="10" r="8" fill="#31d26b"/>
+  </g>
+</svg>

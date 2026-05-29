@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=map-smaller-1" />
+    <link rel="stylesheet" href="styles.css?v=control-center-1" />
   </head>
   <body>
     <div class="backdrop-grid"></div>
@@ -15,7 +15,7 @@
 
     <header class="topbar">
       <div class="brand">
-        <img class="brand-logo-full" src="gesaruta.png?v=1" alt="GesaRuta" />
+        <img class="brand-logo-full" src="gesaruta.png?v=2" alt="GesaRuta" />
       </div>
 
       <nav class="nav" aria-label="Navegación principal">
@@ -326,7 +326,7 @@
 
         <article class="download-card">
           <div class="download-visual">
-            <img class="download-truck-image" src="camion_gesa_dr.png?v=5" alt="Camión GesaRuta" />
+            <img class="download-truck-image" src="camion_gesa_dr.png?v=6" alt="Camión GesaRuta" />
           </div>
           <div class="download-copy">
             <h2>DESCARGA REMOTA</h2>
@@ -347,27 +347,60 @@
 
       <section class="section hardware reveal" id="hardware">
         <div class="section-title">
-          <h2><span>TACTICAL</span> <span class="accent">GEAR</span></h2>
-          <p>Hardware de alto rendimiento para entornos extremos.</p>
+          <h2><span>CENTRO DE CONTROL</span> <span class="accent">GESATD PRO.</span></h2>
+          <p>Todo el ecosistema del tacógrafo en un único panel de control.</p>
         </div>
         <div class="hardware-grid">
           <article class="hardware-card">
-            <span class="chip">GPS-PRO MK4</span>
-            <div class="hw-icon">◧</div>
-            <h3>Terminal Telemática Pro</h3>
-            <p>Conectividad 5G, redundancia satelital y lectura de bus CAN directo.</p>
+            <span class="chip">CONTROL DE DESCARGAS</span>
+            <div class="module-visual module-downloads" aria-hidden="true">
+              <div class="module-mini-dashboard">
+                <div class="module-mini-row">
+                  <span>0907 JAS</span>
+                  <strong class="state-ok">OK</strong>
+                </div>
+                <div class="module-mini-row">
+                  <span>1209 MXJ</span>
+                  <strong class="state-pending">PENDIENTE</strong>
+                </div>
+                <div class="module-mini-row urgent">
+                  <span>1306 MPD</span>
+                  <strong class="state-urgent">URGENTE</strong>
+                </div>
+              </div>
+            </div>
+            <h3>Estado de vehículos, próxima descarga y tarjetas pendientes.</h3>
+            <p>Alertas automáticas y control continuo para no perder ninguna ventana de descarga.</p>
           </article>
           <article class="hardware-card">
-            <span class="chip">K-READ ELITE</span>
-            <div class="hw-icon">◉</div>
-            <h3>Lector de Tarjetas USB-C</h3>
-            <p>Velocidad de transferencia industrial para descarga manual ultrarrápida.</p>
+            <span class="chip">ANÁLISIS DE INFRACCIONES</span>
+            <div class="module-visual module-compliance" aria-hidden="true">
+              <div class="module-score-ring">
+                <div class="module-score-core">
+                  <strong>72</strong>
+                  <span>Compliance</span>
+                </div>
+              </div>
+              <div class="module-bar-legend">
+                <span class="legend-red"></span>
+                <span class="legend-amber"></span>
+                <span class="legend-green"></span>
+              </div>
+            </div>
+            <h3>Excesos, descansos reducidos, riesgo sancionador e informes automáticos.</h3>
+            <p>Una lectura visual rápida para detectar desviaciones antes de que se conviertan en problema.</p>
           </article>
           <article class="hardware-card">
-            <span class="chip">SENSE-FLOW</span>
-            <div class="hw-icon">◌</div>
-            <h3>Sensor de Combustible</h3>
-            <p>Precisión del 99.9% en detección de consumos y robos accidentales.</p>
+            <span class="chip">GESTIÓN DOCUMENTAL</span>
+            <div class="module-visual module-docs" aria-hidden="true">
+              <div class="doc-carousel">
+                <img class="doc-slide is-active" src="doc-archive-1.svg?v=1" alt="" />
+                <img class="doc-slide" src="doc-archive-2.svg?v=1" alt="" />
+                <img class="doc-slide" src="doc-archive-3.svg?v=1" alt="" />
+              </div>
+            </div>
+            <h3>Ficheros TGD, exportación para inspección, histórico de actividad y firma digital.</h3>
+            <p>Documentación ordenada y lista para consulta, trazabilidad o entrega cuando haga falta.</p>
           </article>
         </div>
       </section>
@@ -396,7 +429,7 @@
       <section class="section contact reveal" id="contacto">
         <div class="contact-brand">
           <div class="brand">
-            <img class="brand-logo-full" src="gesaruta.png?v=1" alt="GesaRuta" />
+            <img class="brand-logo-full" src="gesaruta.png?v=2" alt="GesaRuta" />
           </div>
           <p>Liderando la vanguardia tecnológica en logística y transporte. Ingeniería de precisión para un mundo que nunca se detiene.</p>
         </div>
@@ -424,6 +457,6 @@
       <span class="status-dot"><i></i> Sistemas operativos - v4.8.2</span>
     </footer>
 
-    <script src="script.js?v=map-smaller-1"></script>
+    <script src="script.js?v=control-center-2"></script>
   </body>
 </html>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 640" fill="none" role="img" aria-label="Archivo TGD">
+  <defs>
+    <linearGradient id="bg1" x1="109" y1="45" x2="680" y2="602" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#111111"/>
+      <stop offset="0.55" stop-color="#141414"/>
+      <stop offset="1" stop-color="#0a1024"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="176" y1="158" x2="640" y2="494" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff9800" stop-opacity=".28"/>
+      <stop offset=".54" stop-color="#ff9800" stop-opacity=".06"/>
+      <stop offset="1" stop-color="#2952f0" stop-opacity=".22"/>
+    </linearGradient>
+    <linearGradient id="card1" x1="210" y1="116" x2="624" y2="522" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#e5e7eb"/>
+    </linearGradient>
+    <linearGradient id="card2" x1="226" y1="178" x2="602" y2="494" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f4f6fb"/>
+      <stop offset="1" stop-color="#dde5f4"/>
+    </linearGradient>
+    <linearGradient id="accent1" x1="228" y1="134" x2="587" y2="492" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#ff9800"/>
+      <stop offset="1" stop-color="#2952f0"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="640" rx="36" fill="url(#bg1)"/>
+  <ellipse cx="394" cy="330" rx="250" ry="185" fill="url(#glow1)"/>
+  <circle cx="608" cy="118" r="90" fill="#2952f0" fill-opacity=".15"/>
+  <circle cx="180" cy="516" r="118" fill="#ff9800" fill-opacity=".08"/>
+
+  <g opacity=".95">
+    <rect x="178" y="122" width="350" height="450" rx="24" fill="url(#card2)" transform="rotate(-9 178 122)"/>
+    <rect x="228" y="92" width="350" height="450" rx="24" fill="url(#card1)" transform="rotate(4 228 92)"/>
+    <rect x="268" y="140" width="294" height="386" rx="22" fill="#ffffff" stroke="#d7dde8" stroke-width="2"/>
+  </g>
+
+  <g transform="translate(308 194)">
+    <rect x="0" y="0" width="214" height="64" rx="16" fill="url(#accent1)"/>
+    <text x="107" y="41" text-anchor="middle" font-size="29" font-weight="900" font-family="Inter, Arial, sans-serif" fill="#ffffff" letter-spacing="4">TGD</text>
+  </g>
+
+  <g transform="translate(302 292)">
+    <rect x="0" y="0" width="196" height="16" rx="8" fill="#d6dbe6"/>
+    <rect x="0" y="32" width="168" height="16" rx="8" fill="#d6dbe6"/>
+    <rect x="0" y="64" width="184" height="16" rx="8" fill="#d6dbe6"/>
+    <rect x="0" y="96" width="128" height="16" rx="8" fill="#d6dbe6"/>
+  </g>
+
+  <g transform="translate(304 430)">
+    <rect x="0" y="0" width="78" height="78" rx="18" fill="#ff9800"/>
+    <path d="M22 40l14 14 20-28" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="100" y="14" width="148" height="16" rx="8" fill="#d6dbe6"/>
+    <rect x="100" y="44" width="118" height="16" rx="8" fill="#d6dbe6"/>
+  </g>
+
+  <g opacity=".52">
+    <path d="M138 180C193 145 247 128 321 126" stroke="#2952f0" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M537 142C585 163 618 200 639 250" stroke="#ff9800" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="138" cy="180" r="6" fill="#ff9800"/>
+    <circle cx="639" cy="250" r="6" fill="#2952f0"/>
+  </g>
+</svg>

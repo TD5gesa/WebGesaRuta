@@ -275,3 +275,19 @@ if (
   setRoute(0);
   requestAnimationFrame(trackVehicle);
 }
+
+const docSlides = document.querySelectorAll(".doc-slide");
+
+if (docSlides.length > 1) {
+  let activeDocSlide = 0;
+
+  const showDocSlide = (nextIndex) => {
+    docSlides[activeDocSlide].classList.remove("is-active");
+    activeDocSlide = nextIndex;
+    docSlides[activeDocSlide].classList.add("is-active");
+  };
+
+  window.setInterval(() => {
+    showDocSlide((activeDocSlide + 1) % docSlides.length);
+  }, 2600);
+}
