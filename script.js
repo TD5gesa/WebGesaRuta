@@ -81,41 +81,93 @@ if (
   geoRoad &&
   geoTravelled &&
   geoVehicle &&
-  geoSpeed &&
-  geoCoordinates &&
-  geoZone &&
   geoToggle &&
   geoCenter &&
   pinStart &&
   pinEnd &&
   pinEndDot
 ) {
-  const routes = [
+  const baseRoutes = [
     {
-      path: "M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296",
-      start: { x: 477, y: 52 },
-      end: { x: 190, y: 296 },
+      path: "M 470 82 C 466 95 462 109 458 123 C 454 137 449 151 444 165 C 439 179 434 191 428 203 C 422 215 416 226 409 237 C 401 249 392 260 383 270 C 373 281 362 290 350 298 C 337 307 323 314 308 320 C 293 326 278 330 262 332 C 246 334 229 334 214 331 C 204 327 196 319 190 309",
+      start: { x: 470, y: 82 },
+      end: { x: 190, y: 309 },
       from: { lat: 43.4627, lng: -3.8093 },
       to: { lat: 42.5987, lng: -5.5671 },
       zones: ["S-10 / Santander", "A-67 / Torrelavega", "A-67 / Reinosa", "A-67 / Osorno", "A-231 / Sahagun", "A-231 / Leon"]
     },
     {
-      path: "M 190 296 L 214 324 L 278 359 L 348 369 L 358 460 L 357 497 L 327 559",
-      start: { x: 190, y: 296 },
-      end: { x: 327, y: 559 },
+      path: "M 190 309 L 219 319 L 251 333 L 288 347 L 324 364 L 349 392 L 365 433 L 362 468 L 358 498",
+      start: { x: 190, y: 309 },
+      end: { x: 358, y: 498 },
       from: { lat: 42.5987, lng: -5.5671 },
       to: { lat: 41.6523, lng: -4.7245 },
       zones: ["A-231 / Leon", "A-231 / Sahagun", "A-67 / Palencia", "A-62 / Valladolid"]
     },
     {
-      path: "M 327 559 L 340 537 L 357 497 L 365 485 L 358 460 L 394 453 L 485 456 L 495 367 L 556 310 L 591 286 L 618 271 L 662 226",
-      start: { x: 327, y: 559 },
-      end: { x: 662, y: 226 },
+      path: "M 358 498 L 368 468 L 379 435 L 398 405 L 423 377 L 452 351 L 488 326 L 522 303 L 554 281 L 582 255 L 608 233 L 636 211 L 662 196",
+      start: { x: 358, y: 498 },
+      end: { x: 662, y: 196 },
       from: { lat: 41.6523, lng: -4.7245 },
       to: { lat: 42.8467, lng: -2.6727 },
       zones: ["A-62 / Valladolid", "A-62 / Palencia", "A-62 / Burgos", "AP-1 / Miranda de Ebro", "A-1 / Vitoria-Gasteiz"]
     }
   ];
+  const geoModeTransforms = {
+    desktop: { scaleX: 1, scaleY: 1, tx: 0, ty: 0 },
+    tablet: { scaleX: 1, scaleY: 1, tx: 0, ty: 0 },
+    mobile: { scaleX: 1, scaleY: 1, tx: 0, ty: 0 }
+  };
+  const getGeoMode = () => {
+    if (window.matchMedia("(max-width: 720px)").matches) return "mobile";
+    if (window.matchMedia("(max-width: 1100px)").matches) return "tablet";
+    return "desktop";
+  };
+  const transformPoint = (point, transform) => ({
+    x: point.x * transform.scaleX + transform.tx,
+    y: point.y * transform.scaleY + transform.ty
+  });
+  const transformPath = (path, transform) => {
+    const tokens = path.match(/[A-Za-z]|-?\d*\.?\d+(?:e[-+]?\d+)?/gi) ?? [];
+    const output = [];
+    let currentCommand = "";
+    let coordIndex = 0;
+
+    tokens.forEach((token) => {
+      if (/^[A-Za-z]$/.test(token)) {
+        currentCommand = token;
+        coordIndex = 0;
+        output.push(token);
+        return;
+      }
+
+      const value = Number(token);
+      if (Number.isNaN(value)) return;
+
+      const shouldTransform = currentCommand === "M" || currentCommand === "L" || currentCommand === "C";
+      const transformed = shouldTransform
+        ? coordIndex % 2 === 0
+          ? value * transform.scaleX + transform.tx
+          : value * transform.scaleY + transform.ty
+        : value;
+      coordIndex += shouldTransform ? 1 : 0;
+      output.push(`${Math.round(transformed * 100) / 100}`);
+    });
+
+    return output.join(" ");
+  };
+  const buildRoute = (route, mode) => {
+    const transform = geoModeTransforms[mode] ?? geoModeTransforms.desktop;
+    return {
+      ...route,
+      path: transformPath(route.path, transform),
+      start: transformPoint(route.start, transform),
+      end: transformPoint(route.end, transform)
+    };
+  };
+
+  let activeGeoMode = getGeoMode();
+  let routes = baseRoutes.map((route) => buildRoute(route, activeGeoMode));
   const routeDuration = 14500;
   let routeStart;
   let routeProgress = 0;
@@ -129,7 +181,11 @@ if (
     pinEndDot.setAttribute("cy", `${y}`);
   };
 
-  const setRoute = (index) => {
+  const refreshRoutes = () => {
+    routes = baseRoutes.map((route) => buildRoute(route, activeGeoMode));
+  };
+
+  const setRoute = (index, progress = 0) => {
     const route = routes[index];
 
     geoRoad.setAttribute("d", route.path);
@@ -141,10 +197,10 @@ if (
 
     routeLength = geoPath.getTotalLength();
     geoTravelled.style.strokeDasharray = `${routeLength}`;
-    geoTravelled.style.strokeDashoffset = `${routeLength}`;
-    routeProgress = 0;
+    routeProgress = progress;
+    geoTravelled.style.strokeDashoffset = `${routeLength * (1 - progress)}`;
     routeStart = undefined;
-    updateVehicle(0);
+    updateVehicle(progress);
   };
 
   const updateVehicle = (progress) => {
@@ -159,9 +215,9 @@ if (
 
     geoVehicle.setAttribute("transform", `translate(${point.x} ${point.y}) rotate(${angle})`);
     geoTravelled.style.strokeDashoffset = `${routeLength * (1 - progress)}`;
-    geoSpeed.textContent = `${speed} km/h`;
-    geoCoordinates.textContent = `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
-    geoZone.textContent = route.zones[zoneIndex];
+    if (geoSpeed) geoSpeed.textContent = `${speed} km/h`;
+    if (geoCoordinates) geoCoordinates.textContent = `${latitude.toFixed(4)}, ${longitude.toFixed(4)}`;
+    if (geoZone) geoZone.textContent = route.zones[zoneIndex];
   };
 
   const trackVehicle = (time) => {
@@ -199,6 +255,22 @@ if (
     requestAnimationFrame(() => geoVehicle.classList.add("is-centered"));
     window.setTimeout(() => geoVehicle.classList.remove("is-centered"), 1450);
   });
+
+  const syncRouteForViewport = () => {
+    const nextMode = getGeoMode();
+    if (nextMode === activeGeoMode) return;
+
+    const savedProgress = routeProgress;
+    activeGeoMode = nextMode;
+    refreshRoutes();
+    setRoute(routeIndex, savedProgress);
+
+    if (trackingActive) {
+      routeStart = performance.now() - savedProgress * routeDuration;
+    }
+  };
+
+  window.addEventListener("resize", syncRouteForViewport, { passive: true });
 
   setRoute(0);
   requestAnimationFrame(trackVehicle);

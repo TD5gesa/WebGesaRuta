@@ -7,7 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=valladolid-vitoria-road-1" />
+    <link rel="stylesheet" href="styles.css?v=map-smaller-1" />
   </head>
   <body>
     <div class="backdrop-grid"></div>
@@ -15,8 +15,7 @@
 
     <header class="topbar">
       <div class="brand">
-        <span class="brand-mark">G</span>
-        <span class="brand-name">GESATD</span>
+        <img class="brand-logo-full" src="gesaruta.png?v=1" alt="GesaRuta" />
       </div>
 
       <nav class="nav" aria-label="Navegación principal">
@@ -211,10 +210,6 @@
       <section class="section geo-split reveal" id="geolocalizacion">
         <article class="geo-card">
           <div class="geo-map" aria-label="Mapa de ruta Santander Madrid con seguimiento en tiempo real">
-            <div class="geo-map-head">
-              <span class="geo-live"><i></i> GPS LIVE</span>
-              <strong id="geo-zone">S-10 / Santander</strong>
-            </div>
             <div class="real-map-tiles" aria-hidden="true">
               <div class="real-map-grid">
                 <img src="https://tile.openstreetmap.org/8/123/93.png" alt="" />
@@ -291,24 +286,6 @@
                 <g transform="translate(635 154)"><rect width="34" height="18" rx="3"></rect><text x="17" y="12">AP-68</text></g>
                 <g transform="translate(130 254)"><rect width="34" height="18" rx="3"></rect><text x="17" y="12">A-66</text></g>
               </g>
-              <g class="map-cities">
-                <text x="366" y="101">Santander</text>
-                <text x="468" y="128">Bilbao</text>
-                <text x="284" y="161">Reinosa</text>
-                <text x="276" y="207">Aguilar de Campoo</text>
-                <text x="322" y="287">Burgos</text>
-                <text x="205" y="363">Palencia</text>
-                <text x="166" y="439">Valladolid</text>
-                <text x="296" y="572">Segovia</text>
-                <text x="379" y="592">Madrid</text>
-                <text x="88" y="224">Leon</text>
-                <text x="58" y="564">Salamanca</text>
-                <text x="590" y="252">Logrono</text>
-                <text x="642" y="174">Vitoria-Gasteiz</text>
-              </g>
-              <g class="real-map-labels" aria-hidden="true">
-                <text x="477" y="42">Santander</text>
-              </g>
               <path class="geo-road" id="geo-road" d="M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296" />
               <path class="geo-path" id="geo-path" d="M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296" />
               <path class="geo-travelled" id="geo-travelled" d="M 477 52 L 438 84 L 423 182 L 403 241 L 392 297 L 387 348 L 348 369 L 278 359 L 214 324 L 190 296" />
@@ -340,44 +317,30 @@
                 </g>
               </g>
             </svg>
-            <div class="geo-hud">
-              <div>
-                <span>Unidad</span>
-                <strong>TRK-042</strong>
-              </div>
-              <div>
-                <span>Velocidad</span>
-                <strong id="geo-speed">82 km/h</strong>
-              </div>
-              <div>
-                <span>Coordenadas</span>
-                <strong id="geo-coordinates">43.4627, -3.8093</strong>
-              </div>
-            </div>
           </div>
           <div class="geo-copy">
             <h2>GEOLOCALIZACIÓN MILIMÉTRICA</h2>
             <p>Precisión de grado militar. Siga cada activo en tiempo real con integración de tráfico, clima y telemetría de motor.</p>
-            <div class="geo-actions">
-              <button class="ghost geo-button" id="geo-toggle" type="button">Pausar seguimiento</button>
-              <button class="ghost geo-button" id="geo-center" type="button">Centrar unidad</button>
-            </div>
           </div>
         </article>
 
         <article class="download-card">
-          <div class="download-icon">⬇</div>
-          <h2>DESCARGA REMOTA 2.0</h2>
-          <p>Olvide las molestias de desplazarse al vehículo. Descargue archivos de tacógrafo y tarjeta de conductor a distancia, esté donde esté el camión.</p>
-          <div class="download-progress">
-            <div class="download-head">
-              <span>Progreso de descarga</span>
-              <strong id="download-percent">0%</strong>
+          <div class="download-visual">
+            <img class="download-truck-image" src="camion_gesa_dr.png?v=5" alt="Camión GesaRuta" />
+          </div>
+          <div class="download-copy">
+            <h2>DESCARGA REMOTA</h2>
+            <p>Olvide las molestias de desplazarse al vehículo. Descargue archivos de tacógrafo y tarjeta de conductor a distancia, esté donde esté el camión.</p>
+            <div class="download-progress">
+              <div class="download-head">
+                <span>Progreso de descarga</span>
+                <strong id="download-percent">0%</strong>
+              </div>
+              <div class="download-bar" role="progressbar" aria-label="Progreso de descarga remota" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+                <span id="download-fill"></span>
+              </div>
+              <p class="download-state" id="download-state">Estado: conectando con data_v4.tgd ...</p>
             </div>
-            <div class="download-bar" role="progressbar" aria-label="Progreso de descarga remota" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
-              <span id="download-fill"></span>
-            </div>
-            <p class="download-state" id="download-state">Estado: conectando con data_v4.tgd ...</p>
           </div>
         </article>
       </section>
@@ -433,8 +396,7 @@
       <section class="section contact reveal" id="contacto">
         <div class="contact-brand">
           <div class="brand">
-            <span class="brand-mark">G</span>
-            <span class="brand-name">GESATD</span>
+            <img class="brand-logo-full" src="gesaruta.png?v=1" alt="GesaRuta" />
           </div>
           <p>Liderando la vanguardia tecnológica en logística y transporte. Ingeniería de precisión para un mundo que nunca se detiene.</p>
         </div>
@@ -462,6 +424,6 @@
       <span class="status-dot"><i></i> Sistemas operativos - v4.8.2</span>
     </footer>
 
-    <script src="script.js?v=valladolid-vitoria-road-1"></script>
+    <script src="script.js?v=map-smaller-1"></script>
   </body>
 </html>

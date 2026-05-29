@@ -84,9 +84,14 @@ body::after {
   justify-self: center;
   margin: 0;
 }
-.brand-mark {
-  width: 38px; height: 38px; display: grid; place-items: center;
-  background: var(--accent); color: #000; border-radius: 2px; font-weight: 900;
+.brand-logo-full {
+  width: 180px !important;
+  max-width: 180px !important;
+  max-height: 54px !important;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  flex: none;
 }
 .brand-name { font-weight: 900; font-size: 1.15rem; letter-spacing: 0.02em; line-height: 1; }
 .nav a, .link-muted {
@@ -332,17 +337,19 @@ h3 { font-size: 1.05rem; }
   transition: width 90ms linear;
 }
 
-.geo-split { grid-template-columns: 1.1fr 0.9fr; align-items: stretch; }
+.geo-split { grid-template-columns: 1fr 1fr; align-items: stretch; }
 .geo-card, .download-card { padding: 0; overflow: hidden; }
+.geo-card, .download-card { height: 100%; }
 .geo-map {
-  min-height: 520px;
+  min-height: clamp(380px, 44vw, 520px);
+  aspect-ratio: 820 / 720;
   background: #dcefcf;
   position: relative;
   overflow: hidden;
 }
-.geo-copy { padding: 26px 30px 30px; }
-.geo-map-head, .geo-hud, .geo-route { position: absolute; z-index: 1; }
-.geo-map-head, .geo-hud { z-index: 2; }
+.geo-copy { padding: 4px 30px 24px; }
+.geo-map-head, .geo-route { position: absolute; z-index: 1; }
+.geo-map-head { z-index: 2; }
 .geo-map-head {
   top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center;
   text-transform: uppercase; font-size: 11px; font-weight: 900; letter-spacing: .1em;
@@ -370,8 +377,8 @@ h3 { font-size: 1.05rem; }
 .real-map-grid {
   position: absolute;
   left: 50%;
-  top: 63%;
-  width: 112%;
+  top: 58%;
+  width: 116%;
   aspect-ratio: 1;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -440,6 +447,15 @@ h3 { font-size: 1.05rem; }
   paint-order: stroke;
   stroke: rgba(255,255,255,.9);
   stroke-width: 3.5px;
+}
+.geo-road,
+.geo-path,
+.geo-travelled,
+.route-pins {
+  display: none;
+}
+.geo-vehicle {
+  display: none;
 }
 .geo-alt-route {
   fill: none;
@@ -518,27 +534,30 @@ h3 { font-size: 1.05rem; }
   stroke-width: 5px;
   text-anchor: middle;
 }
-.geo-hud {
-  bottom: 14px; left: 14px; right: 14px; display: grid; grid-template-columns: .8fr .8fr 1.5fr; gap: 8px;
+.download-card {
+  padding: 0;
+  display: grid;
+  grid-template-rows: minmax(340px, 1fr) auto;
+  align-content: start;
 }
-.geo-hud div {
-  padding: 9px 11px; border-radius: 4px; border: 1px solid rgba(80,93,74,.18);
-  background: rgba(255,255,255,.92); min-width: 0;
-  box-shadow: 0 4px 14px rgba(42, 58, 71, .14);
+.download-visual {
+  min-height: 360px;
+  overflow: hidden;
 }
-.geo-hud span {
-  display: block; margin-bottom: 4px; text-transform: uppercase; font-size: 9px; font-weight: 800;
-  letter-spacing: .12em; color: #6c756a;
+.download-truck-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 22px 22px 0 0;
 }
-.geo-hud strong { font-size: 12px; color: #233028; white-space: nowrap; }
-.geo-actions { display: flex; gap: 10px; margin-top: 22px; }
-.geo-button {
-  min-height: 40px; padding: 0 14px; color: var(--text); font: inherit; font-size: 11px;
-  cursor: pointer; letter-spacing: .08em;
+.download-copy {
+  padding: 24px 18px 18px;
+  display: grid;
+  gap: 8px;
 }
-.geo-button.is-active { border-color: rgba(255,152,0,.55); color: var(--accent); }
-.download-card { padding: 24px; display: grid; gap: 16px; }
-.download-progress { margin-top: auto; background: rgba(255,255,255,.02); border: 1px solid rgba(255,152,0,.22); border-radius: 18px; padding: 18px; }
+.download-progress { margin-top: 8px; background: rgba(255,255,255,.02); border: 1px solid rgba(255,152,0,.22); border-radius: 18px; padding: 18px; }
 .download-head strong { color: var(--accent); font-variant-numeric: tabular-nums; }
 .download-state { margin-top: 12px; text-transform: uppercase; font-size: 12px; font-weight: 900; color: #d2b39a; }
 
@@ -664,6 +683,14 @@ h3 { font-size: 1.05rem; }
   .hero, .split-layout, .two-col, .geo-split, .hardware-grid, .contact { grid-template-columns: 1fr; }
   .nav { display: none; }
   .status-card { width: 100%; justify-self: stretch; }
+  .geo-map {
+    min-height: 0;
+    aspect-ratio: 4 / 5;
+  }
+  .real-map-grid {
+    top: 58%;
+    width: 120%;
+  }
 }
 
 @media (max-width: 720px) {
@@ -671,14 +698,43 @@ h3 { font-size: 1.05rem; }
   .topbar { gap: 12px; padding: 14px 18px; grid-template-columns: auto 1fr; }
   .top-actions { gap: 10px; }
   .nav { display: none; }
-  .brand-name { font-size: 1rem; }
+  .brand-logo-full { width: 140px !important; max-width: 140px !important; max-height: 44px !important; }
   .hero-actions { flex-direction: column; align-items: stretch; }
   .cta, .ghost { width: 100%; }
   .hero-cta, .hero-ghost { min-width: 0; }
   .metrics-row { grid-template-columns: 1fr; }
-  .geo-hud { grid-template-columns: 1fr 1fr; }
-  .geo-hud div:last-child { grid-column: span 2; }
-  .geo-actions { flex-direction: column; }
+  .geo-map {
+    min-height: 360px;
+    aspect-ratio: 4 / 5;
+  }
+  .geo-copy { padding: 6px 18px 18px; }
+  .real-map-grid {
+    top: 52%;
+    width: 132%;
+  }
+  .geo-map-head {
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    font-size: 9px;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .geo-map-head strong, .geo-live { padding: 7px 9px; }
+  .geo-hud {
+    grid-template-columns: 1fr;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    gap: 6px;
+  }
+  .geo-hud div:last-child { grid-column: auto; }
+  .geo-hud div { padding: 8px 10px; }
+  .geo-hud span { font-size: 8px; }
+  .geo-hud strong { font-size: 11px; }
+  .download-card { grid-template-rows: minmax(240px, 1fr) auto; }
+  .download-visual { min-height: 240px; }
+  .download-copy { padding: 20px 14px 16px; }
   .compat-strip { gap: 28px; font-size: 1.1rem; }
   .footer { flex-direction: column; gap: 10px; align-items: flex-start; }
 }
