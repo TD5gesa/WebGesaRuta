@@ -291,3 +291,49 @@ if (docSlides.length > 1) {
     showDocSlide((activeDocSlide + 1) % docSlides.length);
   }, 2600);
 }
+
+const contactForm = document.querySelector("#contact-form");
+const contactFeedback = document.querySelector("#contact-feedback");
+
+if (contactForm && contactFeedback) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.querySelector("#contact-name")?.value.trim() || "";
+    const company = document.querySelector("#contact-company")?.value.trim() || "";
+    const email = document.querySelector("#contact-email")?.value.trim() || "";
+    const phone = document.querySelector("#contact-phone")?.value.trim() || "";
+    const message = document.querySelector("#contact-message")?.value.trim() || "";
+
+    const subject = encodeURIComponent(`Contacto GESATD - ${company || name || "Nueva consulta"}`);
+    const body = encodeURIComponent(
+      `Nombre: ${name}\nEmpresa: ${company}\nEmail: ${email}\nTeléfono: ${phone}\n\nMensaje:\n${message}`
+    );
+
+    contactFeedback.textContent = "Abriendo tu correo con el mensaje preparado...";
+    window.location.href = `mailto:comercial@gesagrupo.com?subject=${subject}&body=${body}`;
+  });
+}
+
+const cookieBanner = document.querySelector("#cookie-banner");
+const cookieAccept = document.querySelector("#cookie-accept");
+const cookieReject = document.querySelector("#cookie-reject");
+const cookieClose = document.querySelector("#cookie-close");
+const cookieConsentKey = "gesatd-cookie-consent-v2";
+
+if (cookieBanner && cookieAccept && cookieReject && cookieClose) {
+  const savedConsent = window.localStorage.getItem(cookieConsentKey);
+
+  if (savedConsent === "accepted" || savedConsent === "rejected") {
+    cookieBanner.classList.add("is-hidden");
+  }
+
+  const hideBanner = (choice) => {
+    window.localStorage.setItem(cookieConsentKey, choice);
+    cookieBanner.classList.add("is-hidden");
+  };
+
+  cookieAccept.addEventListener("click", () => hideBanner("accepted"));
+  cookieReject.addEventListener("click", () => hideBanner("rejected"));
+  cookieClose.addEventListener("click", () => hideBanner("closed"));
+}
