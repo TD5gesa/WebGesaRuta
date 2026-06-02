@@ -307,7 +307,7 @@ if (contactForm && contactFeedback) {
 
     const subject = encodeURIComponent(`Contacto GESATD - ${company || name || "Nueva consulta"}`);
     const body = encodeURIComponent(
-      `Nombre: ${name}\nEmpresa: ${company}\nEmail: ${email}\nTeléfono: ${phone}\n\nMensaje:\n${message}`
+      `Nombre: ${name}\nEmpresa: ${company}\nEmail: ${email}\nTelefono: ${phone}\n\nMensaje:\n${message}`
     );
 
     contactFeedback.textContent = "Abriendo tu correo con el mensaje preparado...";
