@@ -317,6 +317,11 @@ h3 { font-size: 1.05rem; }
   width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; border: 1px solid rgba(255,152,0,0.3); color: var(--accent); font-size: 1.1rem;
   background: rgba(255,152,0,0.08);
 }
+.side-icon-svg {
+  width: 24px;
+  height: 24px;
+  display: block;
+}
 .side-panel ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
 .side-panel li { font-weight: 800; text-transform: uppercase; font-size: 11px; letter-spacing: .06em; }
 .block-button { width: 100%; margin-top: auto; }
@@ -935,7 +940,7 @@ h3 { font-size: 1.05rem; }
 .footer-group {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 22px;
   flex-wrap: wrap;
 }
 .status-dot { display: inline-flex; align-items: center; gap: 10px; }
@@ -949,11 +954,14 @@ h3 { font-size: 1.05rem; }
 }
 .footer-link:hover { color: var(--accent); }
 .footer-seal-image {
-  width: 58px;
-  height: 58px;
+  width: clamp(94px, 8vw, 124px);
+  height: clamp(94px, 8vw, 124px);
   display: block;
-  border-radius: 12px;
-  box-shadow: 0 10px 24px rgba(0,0,0,.28);
+  border-radius: 10px;
+  padding: 0;
+  background: transparent;
+  object-fit: contain;
+  box-shadow: 0 14px 28px rgba(0,0,0,.28);
 }
 
 .cookie-banner {
