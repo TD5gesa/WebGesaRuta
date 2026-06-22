@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "run_dir": "C:\\Users\\jdesouza\\Documents\\GitHub\\WebGesaRuta\\pet-runs\\nexo",
+  "spritesheet": "C:\\Users\\jdesouza\\Documents\\GitHub\\WebGesaRuta\\pet-runs\\nexo\\final\\spritesheet.webp",
+  "validation": "C:\\Users\\jdesouza\\Documents\\GitHub\\WebGesaRuta\\pet-runs\\nexo\\final\\validation.json",
+  "contact_sheet": "C:\\Users\\jdesouza\\Documents\\GitHub\\WebGesaRuta\\pet-runs\\nexo\\qa\\contact-sheet.png",
+  "review": "C:\\Users\\jdesouza\\Documents\\GitHub\\WebGesaRuta\\pet-runs\\nexo\\qa\\review.json",
+  "package": "C:\\Users\\jdesouza\\.codex\\pets\\nexo"
+}

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=contact-8" />
+    <link rel="stylesheet" href="styles.css?v=languages-support-1" />
   </head>
   <body>
     <div class="backdrop-grid"></div>
@@ -22,9 +22,22 @@
         </a>
       </div>
       <div class="header-actions">
+        <nav class="language-switcher" aria-label="Seleccionar idioma">
+          <button class="language-btn is-active" type="button" data-language="es" aria-label="Ver la web en español" title="Español"><span aria-hidden="true">🇪🇸</span></button>
+          <button class="language-btn" type="button" data-language="en" aria-label="Translate website to English" title="English"><span aria-hidden="true">🇬🇧</span></button>
+          <button class="language-btn" type="button" data-language="fr" aria-label="Traduire le site en français" title="Français"><span aria-hidden="true">🇫🇷</span></button>
+          <button class="language-btn" type="button" data-language="pt" aria-label="Traduzir o site para português" title="Português"><span aria-hidden="true">🇵🇹</span></button>
+        </nav>
+        <a
+          class="header-support-btn"
+          href="https://download.anydesk.com/AnyDesk.exe"
+          target="_blank"
+          rel="noopener noreferrer"
+          title="Descargar AnyDesk para Windows desde la web oficial"
+        >Soporte</a>
         <a class="header-contact-btn" href="#contacto">Contacto</a>
       </div>
-
+      <div id="google_translate_element" class="google-translate-host" aria-hidden="true"></div>
     </header>
 
     <main>
@@ -521,7 +534,8 @@
       </div>
     </aside>
 
-    <script src="script.js?v=contact-7"></script>
+    <script src="script.js?v=languages-support-1"></script>
+    <script async src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
   </body>
 </html>
 

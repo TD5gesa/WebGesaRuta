@@ -1,3 +1,71 @@
+const supportedLanguages = ["es", "en", "fr", "pt"];
+
+const getTranslateLanguage = () => {
+  const match = document.cookie.match(/(?:^|;\s*)googtrans=\/es\/([a-z-]+)/i);
+  return supportedLanguages.includes(match?.[1]) ? match[1] : "es";
+};
+
+const setTranslateCookie = (language) => {
+  const value = language === "es" ? "" : `/es/${language}`;
+  const expiry = language === "es"
+    ? "Thu, 01 Jan 1970 00:00:00 GMT"
+    : "Fri, 31 Dec 9999 23:59:59 GMT";
+  const domain = window.location.hostname;
+
+  document.cookie = `googtrans=${value}; expires=${expiry}; path=/; SameSite=Lax`;
+  if (domain && domain !== "localhost" && domain.includes(".")) {
+    document.cookie = `googtrans=${value}; expires=${expiry}; path=/; domain=.${domain}; SameSite=Lax`;
+  }
+};
+
+const updateLanguageButtons = (language = getTranslateLanguage()) => {
+  document.querySelectorAll("[data-language]").forEach((button) => {
+    const isActive = button.dataset.language === language;
+    button.classList.toggle("is-active", isActive);
+    button.setAttribute("aria-pressed", `${isActive}`);
+  });
+  document.documentElement.lang = language;
+};
+
+window.googleTranslateElementInit = () => {
+  if (!window.google?.translate?.TranslateElement) return;
+
+  new window.google.translate.TranslateElement(
+    {
+      pageLanguage: "es",
+      includedLanguages: "es,en,fr,pt",
+      autoDisplay: false
+    },
+    "google_translate_element"
+  );
+};
+
+document.querySelectorAll("[data-language]").forEach((button) => {
+  button.addEventListener("click", () => {
+    const language = button.dataset.language;
+    if (!supportedLanguages.includes(language) || language === getTranslateLanguage()) return;
+
+    setTranslateCookie(language);
+    if (language === "es") {
+      window.location.reload();
+      return;
+    }
+
+    const translateSelect = document.querySelector(".goog-te-combo");
+
+    if (translateSelect) {
+      translateSelect.value = language;
+      translateSelect.dispatchEvent(new Event("change"));
+      updateLanguageButtons(language);
+      return;
+    }
+
+    window.location.reload();
+  });
+});
+
+updateLanguageButtons();
+
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
