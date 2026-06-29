@@ -8,12 +8,30 @@
     <link rel="apple-touch-icon" href="gesaruta-blanco.png?v=3" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css?v=languages-support-1" />
   </head>
   <body>
     <div class="backdrop-grid"></div>
     <div class="backdrop-noise"></div>
+    <div class="nexus-vignette"></div>
+    <div class="nexus-scanlines"></div>
+    <div class="nexus-orange-wedge"></div>
+    <div class="nexus-orange-wedge-soft"></div>
+    <svg class="nexus-beams" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+      <defs>
+        <filter id="beam-glow" x="-20%" y="-20%" width="140%" height="140%">
+          <feGaussianBlur stdDeviation="0.18" result="blur"></feGaussianBlur>
+          <feComposite in="SourceGraphic" in2="blur" operator="over"></feComposite>
+        </filter>
+      </defs>
+      <path d="M 15,-10 C 15,30 85,70 85,110" class="beam-track"></path>
+      <path d="M 15,-10 C 15,30 85,70 85,110" class="beam-line beam-one" filter="url(#beam-glow)"></path>
+      <path d="M 85,-10 C 85,40 20,60 20,110" class="beam-track"></path>
+      <path d="M 85,-10 C 85,40 20,60 20,110" class="beam-line beam-two" filter="url(#beam-glow)"></path>
+      <path d="M 50,-10 C 65,30 35,60 50,110" class="beam-track beam-track-soft"></path>
+      <path d="M 50,-10 C 65,30 35,60 50,110" class="beam-line beam-three" filter="url(#beam-glow)"></path>
+    </svg>
 
     <header class="topbar">
       <div class="brand">
@@ -44,7 +62,7 @@
       <section class="hero section" id="hero">
         <div class="hero-copy reveal">
           <p class="eyebrow">Control de tacografo y flota</p>
-          <h1>
+          <h1 class="hero-metallic">
             <span class="block">DOMINIO TOTAL</span>
             <span class="block accent">EN CADA MOVIMIENTO.</span>
           </h1>

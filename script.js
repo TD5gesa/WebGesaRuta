@@ -87,6 +87,46 @@ document.querySelectorAll(
   card.style.transitionDelay = `${Math.min(index * 40, 320)}ms`;
 });
 
+if (window.matchMedia("(pointer: fine)").matches) {
+  let glowFrame = null;
+  let activeCard = null;
+  let pendingPoint = null;
+
+  const paintGlow = () => {
+    glowFrame = null;
+    if (!activeCard || !pendingPoint) return;
+
+    const rect = activeCard.getBoundingClientRect();
+    activeCard.style.setProperty("--mouse-x", `${pendingPoint.x - rect.left}px`);
+    activeCard.style.setProperty("--mouse-y", `${pendingPoint.y - rect.top}px`);
+  };
+
+  document.querySelectorAll(
+    ".status-card, .dashboard-card, .wide-panel, .side-panel, .report-card, .geo-card, .download-card, .hardware-card, .alert-card, .glass-card, .feature-card"
+  ).forEach((card) => {
+    card.addEventListener("pointerenter", (event) => {
+      activeCard = card;
+      pendingPoint = { x: event.clientX, y: event.clientY };
+      if (!glowFrame) glowFrame = window.requestAnimationFrame(paintGlow);
+    });
+
+    card.addEventListener("pointermove", (event) => {
+      activeCard = card;
+      pendingPoint = { x: event.clientX, y: event.clientY };
+      if (!glowFrame) glowFrame = window.requestAnimationFrame(paintGlow);
+    });
+
+    card.addEventListener("pointerleave", () => {
+      card.style.setProperty("--mouse-x", "-1000px");
+      card.style.setProperty("--mouse-y", "-1000px");
+      if (activeCard === card) {
+        activeCard = null;
+        pendingPoint = null;
+      }
+    });
+  });
+}
+
 const downloadFill = document.querySelector("#download-fill");
 const downloadPercent = document.querySelector("#download-percent");
 const downloadBar = document.querySelector(".download-bar");
