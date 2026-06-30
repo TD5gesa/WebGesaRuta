@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contenido de la web GesaRuta por secciones</title>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #1f2328;
+      line-height: 1.55;
+      margin: 32px;
+    }
+    h1, h2, h3 {
+      color: #d97706;
+      margin: 0 0 10px 0;
+    }
+    h1 {
+      font-size: 28px;
+      border-bottom: 2px solid #f59e0b;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 26px;
+    }
+    h3 {
+      font-size: 16px;
+      color: #374151;
+      margin-top: 18px;
+    }
+    .section {
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #e5e7eb;
+    }
+    ul {
+      margin: 8px 0 0 22px;
+    }
+    li {
+      margin-bottom: 6px;
+    }
+    .label {
+      font-weight: bold;
+    }
+    .muted {
+      color: #6b7280;
+    }
+    a {
+      color: #c2410c;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Contenido de la web GesaRuta por secciones</h1>
+  <p class="muted">Documento generado a partir del contenido actual de la home, organizado por bloques.</p>
+
+  <div class="section">
+    <h2>1. Cabecera</h2>
+    <ul>
+      <li><span class="label">Marca:</span> GesaRuta</li>
+      <li><span class="label">Acceso principal:</span> logo enlazado a la seccion superior</li>
+      <li><span class="label">Idiomas:</span> ES, EN, FR, PT</li>
+      <li><span class="label">Acciones:</span> Soporte y Contacto</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>2. Hero principal</h2>
+    <ul>
+      <li><span class="label">Eyebrow:</span> GesaRuta Control Platform</li>
+      <li><span class="label">Titulo:</span> Control total del tacografo y la flota</li>
+      <li><span class="label">Subtitulo:</span> Una plataforma clara y premium para descargar, vigilar y analizar tu operativa en tiempo real, con geolocalizacion, compliance y documentos siempre a mano.</li>
+      <li><span class="label">Botones:</span> Explorar plataforma / Contactar</li>
+      <li><span class="label">Visual:</span> panel principal con estado de sincronizacion y monitor grafico</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>3. Compatibilidad y seguridad</h2>
+    <ul>
+      <li><span class="label">Mensaje:</span> Compatibilidad universal y seguridad bancaria</li>
+      <li><span class="label">Metrica 1:</span> 24/7 Descargas remotas</li>
+      <li><span class="label">Metrica 2:</span> Control documental</li>
+      <li><span class="label">Metrica 3:</span> Listo para inspeccion</li>
+      <li><span class="label">Metrica 4:</span> Soporte especializado</li>
+      <li><span class="label">Seguridad:</span> AES-256 encrypted, GDPR compliant, 100% cloud security</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>4. Inteligencia tacografo</h2>
+    <ul>
+      <li><span class="label">Titulo:</span> INTELIGENCIA TACOGRAFO</li>
+      <li><span class="label">Texto:</span> Control de tiempos, validacion TGD y prevencion de sanciones.</li>
+      <li><span class="label">Panel:</span> validacion de archivos de tacografo en tiempo real</li>
+      <li><span class="label">Indicadores:</span> Validacion TGD, Infracciones, Proxima descarga</li>
+      <li><span class="label">Bloque lateral:</span> Escudo legal activo con auditoria, alertas preventivas y reportes sancionadores</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>5. Gestion laboral y compliance</h2>
+    <ul>
+      <li><span class="label">Titulo:</span> GESTION LABORAL Y COMPLIANCE</li>
+      <li><span class="label">Tarjeta 1:</span> Exceso de jornadas</li>
+      <li><span class="label">Tarjeta 2:</span> Calculo de dietas automatico</li>
+      <li><span class="label">Tarjeta 3:</span> Convenio provincial</li>
+      <li><span class="label">Informe:</span> compliance report ID-921 con alerta por exceso de 45 min</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>6. Geolocalizacion milimetrica</h2>
+    <ul>
+      <li><span class="label">Titulo:</span> GEOLOCALIZACION MILIMETRICA</li>
+      <li><span class="label">Descripcion:</span> Seguimiento en tiempo real con integracion de trafico, clima y telemetria de motor.</li>
+      <li><span class="label">Visual:</span> mapa real con ruta activa, vehiculo en marcha y pins de recorrido</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>7. Descarga remota</h2>
+    <ul>
+      <li><span class="label">Titulo:</span> DESCARGA REMOTA</li>
+      <li><span class="label">Descripcion:</span> Descarga archivos de tacografo y tarjeta de conductor a distancia, este donde este el camion.</li>
+      <li><span class="label">Visual:</span> imagen del camion y barra de progreso de descarga</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>8. Centro de control GESATD</h2>
+    <ul>
+      <li><span class="label">Titulo:</span> CENTRO DE CONTROL GESATD</li>
+      <li><span class="label">Descripcion:</span> Todo el ecosistema del tacografo en un unico panel de control.</li>
+      <li><span class="label">Modulo 1:</span> Descarga remota</li>
+      <li><span class="label">Modulo 2:</span> Informes de actividad</li>
+      <li><span class="label">Modulo 3:</span> Informes de infracciones</li>
+      <li><span class="label">Modulo 4:</span> Sin tarjeta</li>
+      <li><span class="label">Modulo 5:</span> Gestion de inspecciones</li>
+      <li><span class="label">Modulo 6:</span> Soporte tecnico</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>9. Llamada a la accion final</h2>
+    <ul>
+      <li><span class="label">Texto principal:</span> ¿Quieres simplificar la gestion de tus tacografos?</li>
+      <li><span class="label">Botones:</span> Contactar / Solicitar demostracion</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>10. Contacto</h2>
+    <h3>Central de datos</h3>
+    <ul>
+      <li>Calle Tres de Noviembre, 12, 39010 Santander (Cantabria)</li>
+      <li>+34 942 353 046</li>
+      <li>+34 902 101 788</li>
+    </ul>
+    <h3>Departamentos</h3>
+    <ul>
+      <li>comercial@gesagrupo.com</li>
+      <li>atencionalcliente@gesagrupo.com</li>
+      <li>internacional@gesagrupo.com</li>
+      <li>sanciones@gesagrupo.com</li>
+    </ul>
+    <h3>Delegaciones</h3>
+    <ul>
+      <li>Pais Vasco</li>
+      <li>Castilla y Leon</li>
+      <li>Asturias</li>
+      <li>Andalucia</li>
+      <li>Murcia</li>
+      <li>Cataluna</li>
+      <li>Galicia</li>
+      <li>Madrid</li>
+      <li>Malaga</li>
+    </ul>
+    <h3>Formulario</h3>
+    <ul>
+      <li>Nombre</li>
+      <li>Empresa</li>
+      <li>Email</li>
+      <li>Telefono</li>
+      <li>Mensaje</li>
+      <li>Enviar consulta</li>
+      <li>Abrir correo</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>11. Footer</h2>
+    <ul>
+      <li><span class="label">Marca:</span> GesaRuta</li>
+      <li><span class="label">Servicios:</span> descarga remota, informes de actividad, infracciones, inspecciones</li>
+      <li><span class="label">Empresa:</span> inicio, centro de control, geolocalizacion, contacto</li>
+      <li><span class="label">Legal:</span> aviso legal, politica de privacidad, politica de cookies</li>
+      <li><span class="label">Certificacion:</span> ISO 9001 LRQA</li>
+      <li><span class="label">Copyright:</span> Copyright &copy; Gesa Ruta</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>12. Aviso de cookies</h2>
+    <ul>
+      <li><span class="label">Titulo:</span> Usamos cookies</li>
+      <li><span class="label">Texto:</span> Utilizamos cookies tecnicas para mejorar tu experiencia de navegacion y analizar el uso del sitio.</li>
+      <li><span class="label">Acciones:</span> Rechazar / Aceptar / Cerrar</li>
+    </ul>
+  </div>
+</body>
+</html>
